@@ -11,7 +11,7 @@
   </head>
   <body>
 
-    <header>
+    <header class="bg">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <img class="img-fluid" alt="Responsive image" src="test.png">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,9 +42,56 @@
                 <input class="form-control mr-sm-2" type="search" placeholder="Rechercher" aria-label="Rechercher">
                 <button type="button" class="btn btn-light rechercher">Rechercher</button>
               </form>
-              <button type="button" class="btn btn-primary ">
-                  S'inscrire
+
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+              S'inscrire
               </button>
+
+              <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLongTitle">S'inscrire</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+
+                    <div class="alert alert-secondary text-center" role="alert">
+                      Merci de rentrer correctement vos informations pour pouvoir être valider
+                    </div>
+                    
+                    <form>
+                      <div class="form-row test">
+                        <div class="col">
+                          <input type="text" class="form-control" placeholder="Prénom">
+                        </div>
+                        <div class="col">
+                          <input type="text" class="form-control" placeholder="Nom">
+                        </div>
+                      </div>
+                    </form>
+
+                    <form class="test">
+                      <div class="form-group">
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                      </div>
+                      <div class="form-group">
+                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                      </div>
+                      <div class="alert alert-danger test2 small" role="alert">
+                        Ne partager pas votre mot de passe !
+                      </div>
+                    </form>
+
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                      <button type="button" class="btn btn-primary">S'enregistrer</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
               <button type="button" class="btn btn-primary">
                   Se connecter
               </button>
@@ -77,7 +124,8 @@
             <div class="card-footer text-muted">
               Il y a 2 jours..
             </div>
-          </div>-->
+        </div>-->
+
           <div class="card-columns text-center">
           <div class="card carn">
             <div class="card-header">
@@ -176,7 +224,22 @@
         <div class="container text-center">
           <small>Copyright &copy; Jobboard</small>
         </div>
-      </footer>
+    </footer>
+
+  <script>
+    $(document).ready(function(){
+      $(".modal").on("show.bs.modal", function(){
+        if ( !$(this).parent().is("body")) {
+          $(this).appendTo("body");
+        }
+
+        $("body").children().not(this).addClass("blur");
+      })
+      .on("hide.bs.modal", function() {
+        $("body").children().not(this).removeClass("blur");
+      })
+    })
+  </script>
 
   </body>
 </html>
