@@ -1,6 +1,6 @@
 <?php
 include "bdd.php";
-
+$nb = 0;
 $req = $bdd->query("SELECT id, entreprise, type, poste, description, tags, p_date FROM annonces");
        while($row = $req->fetch()) {
           $id = $row["id"];
@@ -11,21 +11,27 @@ $req = $bdd->query("SELECT id, entreprise, type, poste, description, tags, p_dat
           $tags = $row["tags"];
           $date = $row["p_date"];
 
-          $req = $bdd->query("SELECT nom, description FROM entreprises WHERE id = $entreprise");
-          while($row = $req->fetch()) {
+          $req2 = $bdd->query("SELECT nom, description FROM entreprises WHERE id = $entreprise");
+          while($row = $req2->fetch()) {
              $entreprise = $row["nom"];
              $desc_entreprise = $row["description"];
            };
 
-            echo "<div id=\"$id\"class=\"card text-center central\">
-                <div class=\"card-header\">
-                  <span class=\"badge badge-secondary\">New</span>  TYPE DE L'OFFRE : $type
+            echo "<div class=\"card text-center ";
+            if ($nb == 0) {
+              echo "central\">";
+            }else{echo "\">";}
+              echo "<div class=\"card-header\" id=\"$id\">";
+                  if ($nb == 0) {
+                    echo "<span class=\"badge badge-secondary\">New</span>";
+                  }
+                  echo "TYPE DE L'OFFRE : $type
                 </div>
                 <div class=\"card-body\">
                   <h5 class=\"card-title\">$poste - $entreprise </h5>
                   <p class=\"card-text\" >$desc_entreprise</p>
                   <p class=\"card-text collapse\" id=\"collapseExample$id\">$description</p>
-                  <button type=\"button\" class=\"btn btn-dark\" data-toggle=\"collapse\" href=\"#collapseExample$id\">En savoir plus</button>
+                  <button type=\"button\" class=\"btn btn-dark\" data-toggle=\"collapse\" data-target=\"#collapseExample$id\">En savoir plus</button>
                   <button type=\"button\" class=\"btn btn-dark\">Appliquer</button>
 
                 </div>
@@ -33,17 +39,10 @@ $req = $bdd->query("SELECT id, entreprise, type, poste, description, tags, p_dat
                   $date
                 </div>
             </div>";
-
-
-
-
-
-
-
-
-
-
-
+            if ($nb == 0){
+              echo "<div class=\"card-columns text-center\">";
+              $nb = 1;
+            }
           };
 
 
