@@ -2,6 +2,28 @@
     margin-bottom: 2%;
 }
 
-.card {
+.central, .card-columns {
     margin: 0% 2% 2% 2%;
+}
+
+.btn-dark {
+    margin-top: 1%;
+}
+
+.carn {
+    margin-left: auto;
+    margin-bottom: 2%;
+    width: auto;
+}
+
+.alert {
+    margin: 0% 2% 2% 2%;
+}
+
+.btn-primary {
+    margin-left: 0.3%;
+}
+
+.logo {
+    max-width: 60%;
 }
