@@ -60,7 +60,7 @@
                     <div class="alert alert-secondary text-center" role="alert">
                       Merci de rentrer correctement vos informations pour pouvoir être valider
                     </div>
-                    
+
                     <form>
                       <div class="form-row test">
                         <div class="col">
@@ -126,96 +126,6 @@
             </div>
         </div>-->
 
-          <div class="card-columns text-center">
-          <div class="card carn">
-            <div class="card-header">
-              TYPE DE L'OFFRE : CDD ...etc
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">NOM ENTREPRISE</h5>
-              <p class="card-text">Description de l'entreprise qui recherche une personne pour un poste précis.</p>
-              <button type="button" class="btn btn-dark">En savoir plus</button>
-              <button type="button" class="btn btn-dark">Appliquer</button>
-            </div>
-            <div class="card-footer text-muted">
-              Il y a 2 jours..
-            </div>
-          </div>
-
-          <div class="card carn">
-            <div class="card-header">
-              TYPE DE L'OFFRE : CDD ...etc
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">NOM ENTREPRISE</h5>
-              <p class="card-text">Description de l'entreprise qui recherche une personne pour un poste précis.</p>
-              <button type="button" class="btn btn-dark">En savoir plus</button>
-              <button type="button" class="btn btn-dark">Appliquer</button>
-            </div>
-            <div class="card-footer text-muted">
-              Il y a 2 jours..
-            </div>
-          </div>
-
-          <div class="card carn">
-            <div class="card-header">
-              TYPE DE L'OFFRE : CDD ...etc
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">NOM ENTREPRISE</h5>
-              <p class="card-text">Description de l'entreprise qui recherche une personne pour un poste précis.</p>
-              <button type="button" class="btn btn-dark">En savoir plus</button>
-              <button type="button" class="btn btn-dark">Appliquer</button>
-            </div>
-            <div class="card-footer text-muted">
-              Il y a 2 jours..
-            </div>
-          </div>
-
-          <div class="card carn">
-            <div class="card-header">
-              TYPE DE L'OFFRE : CDD ...etc
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">NOM ENTREPRISE</h5>
-              <p class="card-text">Description de l'entreprise qui recherche une personne pour un poste précis.</p>
-              <button type="button" class="btn btn-dark">En savoir plus</button>
-              <button type="button" class="btn btn-dark">Appliquer</button>
-            </div>
-            <div class="card-footer text-muted">
-              Il y a 2 jours..
-            </div>
-          </div>
-
-          <div class="card carn">
-            <div class="card-header">
-              TYPE DE L'OFFRE : CDD ...etc
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">NOM ENTREPRISE</h5>
-              <p class="card-text">Description de l'entreprise qui recherche une personne pour un poste précis.</p>
-              <button type="button" class="btn btn-dark">En savoir plus</button>
-              <button type="button" class="btn btn-dark">Appliquer</button>
-            </div>
-            <div class="card-footer text-muted">
-              Il y a 2 jours..
-            </div>
-          </div>
-
-          <div class="card carn">
-            <div class="card-header">
-              TYPE DE L'OFFRE : CDD ...etc
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">NOM ENTREPRISE</h5>
-              <p class="card-text">Description de l'entreprise qui recherche une personne pour un poste précis.</p>
-              <button type="button" class="btn btn-dark">En savoir plus</button>
-              <button type="button" class="btn btn-dark">Appliquer</button>
-            </div>
-            <div class="card-footer text-muted">
-              Il y a 2 jours..
-            </div>
-          </div>
         </div>
 
     </main>
