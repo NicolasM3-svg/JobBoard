@@ -6,10 +6,12 @@
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@100;400;500;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="./js/script.js"></script>
   </head>
+
   <body>
 
     <header class="bg">
@@ -38,7 +40,7 @@
                         <span aria-hidden="true">&times;</span>
                       </button>
                     </div>
-                    <form action="back/inscription.php" method="get" class="test">
+                    <form class="test" method="post" action="./back/inscription.php">
                       <div class="container">
                         <div class="alert alert-secondary text-center" role="alert">
                           Merci de rentrer correctement vos informations pour pouvoir être valider
@@ -53,7 +55,7 @@
                       </div>
                       <div class="test">
                       <div class="form-group">
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name="mail">
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name="email">
                       </div>
                       <div class="form-group">
                         <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password">
@@ -66,13 +68,12 @@
                       </div>
 
                       </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                        <button type="submit" id="submit" class="btn btn-primary greycolor">S'enregistrer</button>
+                      </div>
                     </div>
                     </form>
-
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-                      <button type="button" class="btn btn-primary greycolor">S'enregistrer</button>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -121,19 +122,28 @@
         </div>
     </footer>
 
-  <script>
-    $(document).ready(function(){
-      $(".modal").on("show.bs.modal", function(){
-        if ( !$(this).parent().is("body")) {
-          $(this).appendTo("body");
-        }
-
-        $("body").children().not(this).addClass("blur");
-      })
-      .on("hide.bs.modal", function() {
-        $("body").children().not(this).removeClass("blur");
-      })
-    })
+  <script type="text/javascript">
+    //   $(".modal").on("show.bs.modal", function(){
+    //     if ( !$(this).parent().is("body")) {
+    //       $(this).appendTo("body");
+    //     }
+    //
+    //     $("body").children().not(this).addClass("blur");
+    //   })
+    //   .on("hide.bs.modal", function() {
+    //     $("body").children().not(this).removeClass("blur");
+    //   })
+    //
+    //
+    // $("#submit").click(function() {
+    //   console.log('Hi')
+    //   debugger;
+    //   var inscription = $("form").serialize()
+    //   console.log(inscription);
+    //   $.post("back/inscription.php", inscription, function(data) {
+    //     alert(data)
+    //   }, "html")
+    // })
   </script>
 
   </body>
