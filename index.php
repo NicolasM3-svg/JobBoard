@@ -38,32 +38,35 @@
                         <span aria-hidden="true">&times;</span>
                       </button>
                     </div>
-
-                    <div class="alert alert-secondary text-center" role="alert">
-                      Merci de rentrer correctement vos informations pour pouvoir être valider
-                    </div>
-
-                    <form>
-                      <div class="form-row test">
+                    <form action="back/inscription.php" method="get" class="test">
+                      <div class="container">
+                        <div class="alert alert-secondary text-center" role="alert">
+                          Merci de rentrer correctement vos informations pour pouvoir être valider
+                        </div>
+                      <div class="form-row">
                         <div class="col">
-                          <input type="text" class="form-control" placeholder="Prénom">
+                          <input type="text" class="form-control" placeholder="Prénom" name="prenom">
                         </div>
                         <div class="col">
-                          <input type="text" class="form-control" placeholder="Nom">
+                          <input type="text" class="form-control" placeholder="Nom" name="nom">
                         </div>
                       </div>
-                    </form>
-
-                    <form class="test">
+                      <div class="test">
                       <div class="form-group">
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name="mail">
                       </div>
                       <div class="form-group">
-                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password">
+                      </div>
+                      <div class="form-group">
+                        <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Confirm password" name="passwordverif">
                       </div>
                       <div class="alert alert-danger test2 small" role="alert">
                         Ne partager pas votre mot de passe !
                       </div>
+
+                      </div>
+                    </div>
                     </form>
 
                     <div class="modal-footer">
@@ -90,7 +93,7 @@
         </button>
       </div>
 
-        <?php include "back/annonces.php"; ?>
+        <?php include "back/annonces.php";?>
 
         <!--<div class="card-columns text-center">
           <div class="card carn">
