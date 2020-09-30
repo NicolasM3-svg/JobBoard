@@ -23,7 +23,7 @@ $req = $bdd->query("SELECT id, entreprise, type, poste, description, tags, p_dat
             }else{echo "\">";}
               echo "<div class=\"card-header\" id=\"$id\">";
                   if ($nb == 0) {
-                    echo "<span class=\"badge badge-secondary\">New</span>";
+                    echo "<span class=\"badge badge-secondary newpost\">Nouveau</span>";
                   }
                   echo "TYPE DE L'OFFRE : $type
                 </div>

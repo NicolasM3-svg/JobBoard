@@ -20,9 +20,10 @@
     margin: 0% 2% 2% 2%;
 }
 
-.btn-primary {
+.btn-primary, .btn-secondary {
     margin-left: 0.3%;
 }
+
 
 .logo {
     max-width: 60%;
@@ -46,4 +47,54 @@
     padding-left: 1%;
     padding-right: 1%;
     margin-top: 0.3%;
+}
+
+.browncolor {
+    background-color: #30292F;
+}
+
+.greycolor {
+    background-color: #5D737E !important;
+    border-color: #5D737E !important;
+}
+
+.newpost {
+    background-color: #CA2E55 !important;
+    margin: 0.3%;
+}
+
+.card {
+    border-radius: 1rem !important;
+}
+
+.card-header {
+    border-radius: 1rem 1rem 0px 0px !important;
+    background-color: #E6E9ED !important;
+    border-bottom: none !important;
+}
+
+.card-footer {
+    border-radius: 0px 0px 1rem 1rem !important;
+    background-color: #E6E9ED !important;
+    border-top: none !important;
+}
+
+.card-body {
+    background-color: #E6E9ED !important;
+}
+
+.padtest {
+    margin-right: 70rem;
+}
+
+.Subt {
+    color:white;
+    font-family: 'Exo 2', sans-serif;
+    margin-right: 1%;
+    font-size: 120%;
+}
+
+.Subt2 {
+    font-family: 'Exo 2', sans-serif !important;
+    font-size: 110% !important;
 }
