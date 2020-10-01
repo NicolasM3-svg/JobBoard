@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="fr">
   <head>
     <meta charset="utf-8">
     <title>Jobboard</title>
@@ -41,7 +42,7 @@
     </header>
 
     <main>
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog">
       <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
         <div class="modal-content">
 
@@ -70,7 +71,7 @@
 
                 <div class="test">
                   <div class="form-group">
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name="email">
+                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" name="email">
                   </div>
 
                   <div class="form-group">
@@ -104,7 +105,6 @@
       </div>
 
       <?php include "back/annonces.php";?>
-      </div>
     </main>
 
     <footer id="fixed-bottom" class="py-4 text-white">
@@ -113,7 +113,7 @@
         </div>
     </footer>
 
-  <script type="text/javascript">
+  <script>
     //   $(".modal").on("show.bs.modal", function(){
     //     if ( !$(this).parent().is("body")) {
     //       $(this).appendTo("body");
