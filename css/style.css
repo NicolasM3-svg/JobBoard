@@ -47,10 +47,6 @@
     margin-top: 0.3%;
 }
 
-.browncolor {
-    background-color: #30292F;
-}
-
 .greycolor {
     background-color: #5D737E !important;
     border-color: #5D737E !important;
@@ -81,18 +77,16 @@
     background-color: #E6E9ED !important;
 }
 
-.padtest {
-    margin-right: 70rem;
-}
-
-.Subt {
-    color:white;
-    font-family: 'Exo 2', sans-serif;
-    margin-right: 1%;
-    font-size: 120%;
-}
-
 .Subt2 {
     font-family: 'Exo 2', sans-serif !important;
-    font-size: 110% !important;
+    font-size: 120% !important;
+    color: white !important;
+}
+
+input, body {
+    font-family: 'Exo 2', sans-serif !important;
+}
+
+footer {
+    background-color: #30292F !important;
 }
