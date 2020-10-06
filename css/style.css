@@ -10,8 +10,25 @@
     margin: 0% 10% 2% 10%;
 }
 
+.btn-dark {background-image: linear-gradient(to right, #232526 0%, #414345  51%, #232526  100%)}
 .btn-dark {
-    margin-top: 1%;
+   margin: 10px;
+   padding: 15px 45px;
+   text-align: center;
+   text-transform: uppercase;
+   transition: 0.5s;
+   background-size: 200% auto;
+   color: white;            
+   box-shadow: 0 0 20px #eee;
+   border-radius: 10px;
+   display: block;
+   margin-top: 1%;
+}
+
+.btn-dark:hover {
+   background-position: right center;
+   color: #fff;
+   text-decoration: none;
 }
 
 .carn {
@@ -63,6 +80,7 @@
 
 .card {
     border-radius: 1rem !important;
+    border: 2px dashed rgba(0,0,0,.125) !important;
 }
 
 .card-header {
