@@ -5,7 +5,6 @@
     <meta charset="utf-8">
     <title>JobBoar'd - Emploi</title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="https://kit.fontawesome.com/575d4fd177.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -74,20 +73,28 @@
 
                 <div class="test">
                   <div class="form-group">
-                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" name="email">
+                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Adresse e-mail" name="email">
                   </div>
 
                   <div class="form-group">
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password">
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Mot de passe" name="password">
                   </div>
 
                   <div class="form-group">
-                      <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Confirm password" name="passwordverif">
+                      <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Confirmer mot de passe" name="passwordverif">
                   </div>
 
                   <div class="alert alert-danger test2 small" role="alert">
                       Ne partager pas votre mot de passe !
                   </div>
+                </div>
+                
+                <div>
+                  <select class="custom-select nicomarg">
+                    <option selected>Vous êtes ...</option>
+                    <option value="1">Un recruteur</option>
+                    <option value="2">Un candidat</option>
+                  </select>
                 </div>
 
                 <div class="modal-footer">
