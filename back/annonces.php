@@ -32,7 +32,7 @@ $req = $bdd->query("SELECT id, entreprise, type, poste, description, tags, p_dat
                   <p class=\"card-text\" >$desc_entreprise</p>
                   <p class=\"card-text collapse\" id=\"collapseExample$id\">$description</p>
                   <button type=\"button\" class=\"btn btn-dark\" data-toggle=\"collapse\" data-target=\"#collapseExample$id\">En savoir plus</button>
-                  <button type=\"button\" class=\"btn btn-dark\">Appliquer</button>
+                  <button type=\"button\" class=\"btn btn-dark\" data-toggle=\"modal\" data-target=\"#exampleModalCenter3\">Appliquer</button>
 
                 </div>
                 <div class=\"card-footer text-muted\">
