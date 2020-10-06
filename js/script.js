@@ -17,7 +17,7 @@ $("#submit").click(function() {
   console.log('Hi')
   var inscription = $("form").serialize()
   console.log(inscription);
-  $.post("back/inscription.php", inscription, function(data) {
+  $.post("/users", inscription, function(data) {
     // alert(data)
   }, "html")
 })
