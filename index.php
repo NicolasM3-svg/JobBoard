@@ -3,7 +3,7 @@
 <html lang="fr">
   <head>
     <meta charset="utf-8">
-    <title>Jobboard</title>
+    <title>JobBoar'd - Emploi</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="https://kit.fontawesome.com/575d4fd177.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@700;800&display=swap" rel="stylesheet">
@@ -12,13 +12,16 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <script src="./js/script.js"></script>
+    <link rel="icon" href="img/favicon.ico">
   </head>
 
   <body>
     <header class="bg">
       <div class="bs-example">
           <nav class="navbar navbar-expand-md navbar-dark" style="background-color: #30292F;">
-            <img class="img-fluid" alt="Responsive image" src="test.png">
+          <a href="index.php">
+            <img class="img-fluid" alt="Responsive image" src="img/logo.png">
+          </a>
               <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                   <span class="navbar-toggler-icon"></span>
               </button>
@@ -34,7 +37,7 @@
                   </form>
                   <div class="navbar-nav">
                     <a href="#" class="nav-item nav-link Subt2" data-toggle="modal" data-target="#exampleModalCenter">S'inscrire</a>
-                    <button type="button" class="btn greycolor Subt2">Se connecter</button>
+                    <button type="button" class="btn greycolor Subt2" data-toggle="modal" data-target="#exampleModalCenter2">Se connecter</button>
                   </div>
               </div>
           </nav>
@@ -97,6 +100,45 @@
         </div>
       </div>
 
+      <div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content text-center">
+
+            <div class="modal-header">
+              <h5 class="modal-title">Se connecter</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="alert alert-secondary text-center" role="alert">
+                  Merci de rentrer correctement vos informations pour pouvoir être valider
+            </div>
+
+            <form class="container">
+              <div class="form-group margin1">
+              <label for="examInputEmail1"><i class="far fa-user"></i>   Adresse e-mail</label>
+                <input type="email" class="form-control marg1" id="examInputEmail1" aria-describedby="emailHelp" placeholder="Adresse e-mail">
+              </div>
+              <div class="form-group">
+                <label for="examInputPassword2"><i class="fas fa-sign-out-alt"></i>    Mot de passe</label>
+                <input type="password" class="form-control marg1" id="examInputPassword2" placeholder="Mot de passe">
+              </div>
+              <div class="alert alert-danger test2 small" role="alert">
+                Ne partager pas votre mot de passe !
+              </div>
+              <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Se souvenir de moi</label>
+              </div>
+              <div class="modal-footer">
+              <button type="submit" class="btn btn-primary greycolor">Se connecter</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>  
+
       <div class="alert alert-warning alert-dismissible fade show text-center" role="alert">
         <strong>NOUVEAU</strong> Voici une nouvelle offre qui devrais vous intéresser.
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -107,35 +149,11 @@
       <?php include "back/annonces.php";?>
     </main>
 
-    <footer id="fixed-bottom" class="py-4 text-white">
+    <footer class="py-4 text-white sticky-bottom">
         <div class="container text-center">
-          <small>Copyright &copy; Jobboard</small>
+          <small>Copyright &copy; JobBoar'd</small>
         </div>
     </footer>
-
-  <script>
-    //   $(".modal").on("show.bs.modal", function(){
-    //     if ( !$(this).parent().is("body")) {
-    //       $(this).appendTo("body");
-    //     }
-    //
-    //     $("body").children().not(this).addClass("blur");
-    //   })
-    //   .on("hide.bs.modal", function() {
-    //     $("body").children().not(this).removeClass("blur");
-    //   })
-    //
-    //
-    // $("#submit").click(function() {
-    //   console.log('Hi')
-    //   debugger;
-    //   var inscription = $("form").serialize()
-    //   console.log(inscription);
-    //   $.post("back/inscription.php", inscription, function(data) {
-    //     alert(data)
-    //   }, "html")
-    // })
-  </script>
 
   </body>
 </html>

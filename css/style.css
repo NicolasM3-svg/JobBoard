@@ -6,6 +6,10 @@
     margin: 0% 2% 2% 2%;
 }
 
+.paneladd {
+    margin: 0% 10% 2% 10%;
+}
+
 .btn-dark {
     margin-top: 1%;
 }
@@ -89,4 +93,16 @@ input, body {
 
 footer {
     background-color: #30292F !important;
+}
+
+.nicotest  {
+    border-radius: 16px;
+}
+
+.marg1p {
+    margin-bottom: 1% !important;
+}
+
+.custom-file {
+    margin-bottom: 3% !important;
 }
