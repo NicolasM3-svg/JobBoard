@@ -21,7 +21,7 @@
 }
 
 .alert {
-    margin: 0% 2% 2% 2%;
+    margin: 2% 2% 2% 2%;
 }
 
 .btn-primary, .btn-secondary {
@@ -67,18 +67,21 @@
 
 .card-header {
     border-radius: 1rem 1rem 0px 0px !important;
-    background-color: #E6E9ED !important;
+    background-image: url('http://localhost/img/geometry.png') !important;
+    background-repeat: repeat;
     border-bottom: none !important;
 }
 
 .card-footer {
     border-radius: 0px 0px 1rem 1rem !important;
-    background-color: #E6E9ED !important;
+    background-image: url('http://localhost/img/geometry.png') !important;
+    background-repeat: repeat;
     border-top: none !important;
 }
 
 .card-body {
-    background-color: #E6E9ED !important;
+    background-image: url('http://localhost/img/geometry.png') !important;
+    background-repeat: repeat;
 }
 
 .Subt2 {
@@ -109,4 +112,8 @@ footer {
 
 .nicomarg {
     margin-bottom: 3%;
+}
+
+.nav-tabs {
+    margin: 2% 2% 0% 2% !important;
 }
