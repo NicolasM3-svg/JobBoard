@@ -59,7 +59,9 @@
         <div class="modal-content">
 
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLongTitle">S'inscrire</h5>
+                <a href="index.php">
+                  <img class="img-fluid" alt="Responsive image" src="img/inscription.png">
+                </a>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
@@ -126,7 +128,9 @@
         <div class="modal-content text-center">
 
             <div class="modal-header">
-              <h5 class="modal-title">Se connecter</h5>
+                <a href="index.php">
+                  <img class="img-fluid" alt="Responsive image" src="img/connecter.png">
+                </a>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
@@ -168,7 +172,9 @@
         <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
           <div class="modal-content text-center">
               <div class="modal-header">
-                <h5 class="modal-title">Postuler</h5>
+                <a href="index.php">
+                  <img class="img-fluid" alt="Responsive image" src="img/postuler.png">
+                </a>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
