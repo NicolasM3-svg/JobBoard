@@ -18,6 +18,10 @@ router.post('/connect', (request, response) => {
   });
 });
 
+router.get('/', (request, response) => {
+  response.send('Ce test Fonctionne');
+});
+
 
 
 // application, whatever we assign to module.exports will be exposed as a module.
