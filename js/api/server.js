@@ -7,6 +7,7 @@ const usersRouter = require('./routes/users');
 const entreprisesRouter = require('./routes/entreprises');
 const annoncesRouter = require('./routes/annonces');
 const candidaturesRouter = require('./routes/candidatures');
+const sessionsRouter = require('./routes/sessions');
 
 
 
@@ -17,6 +18,7 @@ app.use(
     extended: true
   })
 )
+
 app.use(express.json());
 // use it before all route definitions
 // allowing below URL to access these APIs end-points
@@ -33,6 +35,7 @@ app.use('/users', usersRouter);
 app.use('/entreprises', entreprisesRouter);
 app.use('/annonces', annoncesRouter);
 app.use('/candidatures', candidaturesRouter);
+app.use('/sessions', sessionsRouter);
 
 
 // default URL to API

@@ -32,9 +32,8 @@ router.put('/:id', (request, response) => {
   const id = request.params.id;
   pool.query('UPDATE utilisateurs SET ? WHERE id =' + id, request.body, (error, result) => {
     if (error) throw error;
-    if (result.length > 0) {
+      console.log(request.body.email);
       response.send(result);
-    };
   });
 });
 
