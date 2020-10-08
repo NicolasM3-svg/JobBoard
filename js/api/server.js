@@ -4,6 +4,10 @@ const express = require('express');
 const cors = require('cors');
 // import `users` from `routes` folder
 const usersRouter = require('./routes/users');
+const entreprisesRouter = require('./routes/entreprises');
+const annoncesRouter = require('./routes/annonces');
+const candidaturesRouter = require('./routes/candidatures');
+
 
 
 // create new app
@@ -26,6 +30,10 @@ app.use(cors({origin: 'http://localhost:80'}));
 → localhost:3000/users/:id (this returns single object)
 */
 app.use('/users', usersRouter);
+app.use('/entreprises', entreprisesRouter);
+app.use('/annonces', annoncesRouter);
+app.use('/candidatures', candidaturesRouter);
+
 
 // default URL to API
 app.use('/test', function(req, res) {

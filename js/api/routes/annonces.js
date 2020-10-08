@@ -10,7 +10,7 @@ const pool = require('../data/config');
 // READ
 // this api end-point of an API returns JSON data array
 router.get('/', (request, response) => {
-  pool.query('SELECT * FROM utilisateurs', (error, result) => {
+  pool.query('SELECT * FROM annonces', (error, result) => {
     if (error) throw error;
     if (result.length > 0) {
       response.send(result);
@@ -20,7 +20,7 @@ router.get('/', (request, response) => {
 
 router.get('/:id', (request, response) => {
   const id = request.params.id;
-  pool.query('SELECT * FROM utilisateurs WHERE id = ?',id, (error, result) => {
+  pool.query('SELECT * FROM annonces WHERE id = ?',id, (error, result) => {
     if (error) throw error;
     if (result.length > 0) {
       response.send(result);
@@ -30,7 +30,7 @@ router.get('/:id', (request, response) => {
 
 router.put('/:id', (request, response) => {
   const id = request.params.id;
-  pool.query('UPDATE utilisateurs SET ? WHERE id =' + id, request.body, (error, result) => {
+  pool.query('UPDATE annonces SET ? WHERE id =' + id, request.body, (error, result) => {
     if (error) throw error;
     if (result.length > 0) {
       response.send(result);
@@ -41,10 +41,10 @@ router.put('/:id', (request, response) => {
 
 router.post('/', (request, response) => {
   console.log(request.body);
-    pool.query('INSERT INTO utilisateurs SET ?', request.body, (error, result) => {
+    pool.query('INSERT INTO annonces SET ?', request.body, (error, result) => {
         if (error) throw error;
 
-        response.status(201).send(`User added with ID: ${result.insertId}`);
+        response.status(201).send(`Annonce ajoutée avec l'ID: ${result.insertId}`);
     });
 });
 
