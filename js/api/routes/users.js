@@ -1,9 +1,11 @@
 // import required essentials
 const express = require('express');
+const bcrypt = require('bcrypt');
 // create new router
 const router = express.Router();
 // create a JSON data array
 const pool = require('../data/config');
+
 
 // HTTP methods ↓↓ starts here.
 
@@ -39,12 +41,20 @@ router.put('/:id', (request, response) => {
 
 
 router.post('/', (request, response) => {
-  console.log(request.body);
-    pool.query('INSERT INTO utilisateurs SET ?', request.body, (error, result) => {
-        if (error) throw error;
+  var user_infos = request.body;
+  const saltRounds = 10;
+  bcrypt.genSalt(saltRounds, function(err, salt) {
+    bcrypt.hash(request.body.mdp, salt, function(err, hash) {
+        user_infos.mdp = hash;
+        console.log(user_infos);
+        pool.query('INSERT INTO utilisateurs SET ?', user_infos, (error, result) => {
+            if (error) throw error;
 
-        response.status(201).send(`User added with ID: ${result.insertId}`);
+            response.status(201).send(`User added with ID: ${result.insertId}`);
+        });
     });
+});
+
 });
 
 

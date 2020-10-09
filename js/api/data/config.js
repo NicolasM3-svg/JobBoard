@@ -2,8 +2,8 @@ const mysql = require('mysql');
 
 const dbconfig = {
     host: 'localhost',
-    user: 'root',
-    password: '',
+    user: 'debian-sys-maint',
+    password: 'ecsnxRK3siQU8vDv',
     database: 'Jobboard',
 };
 

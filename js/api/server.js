@@ -1,6 +1,7 @@
 // import required essentials
 const http = require('http');
 const express = require('express');
+var session = require('express-session');
 const cors = require('cors');
 // import `users` from `routes` folder
 const usersRouter = require('./routes/users');
@@ -20,6 +21,12 @@ app.use(
 )
 
 app.use(express.json());
+
+app.use(session({
+	secret: 'Peanut Butter Jelly Time',
+	resave: true,
+	saveUninitialized: true
+}));
 // use it before all route definitions
 // allowing below URL to access these APIs end-points
 // you can replace this URL(http://localhost:8100) with your
