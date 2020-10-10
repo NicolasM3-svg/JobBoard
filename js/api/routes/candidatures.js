@@ -38,6 +38,14 @@ router.put('/:id', (request, response) => {
   });
 });
 
+router.delete('/:id', (request, response) => {
+  const id = request.params.id;
+  pool.query('DELETE FROM candidatures WHERE id =' + id, (error, result) => {
+    if (error) throw error;
+      response.send(result);
+  });
+});
+
 
 router.post('/', (request, response) => {
   console.log(request.body);

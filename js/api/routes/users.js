@@ -39,6 +39,14 @@ router.put('/:id', (request, response) => {
   });
 });
 
+router.delete('/:id', (request, response) => {
+  const id = request.params.id;
+  pool.query('DELETE FROM utilisateurs WHERE id =' + id, (error, result) => {
+    if (error) throw error;
+      response.send(result);
+  });
+});
+
 
 router.post('/', (request, response) => {
   var user_infos = request.body;
@@ -49,8 +57,7 @@ router.post('/', (request, response) => {
         console.log(user_infos);
         pool.query('INSERT INTO utilisateurs SET ?', user_infos, (error, result) => {
             if (error) throw error;
-
-            response.status(201).send(`User added with ID: ${result.insertId}`);
+            response.status(201).send("{'success': `Utilisateur ajouté avec l'ID: " + result.insertId + "`}");
         });
     });
 });
