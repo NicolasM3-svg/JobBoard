@@ -14,7 +14,9 @@ const pool = require('../data/config');
 router.get('/', (request, response) => {
   pool.query('SELECT * FROM utilisateurs', (error, result) => {
     if (error) throw error;
-    if (result.length > 0) {
+    if (!result.length) {
+      response.send("{'error':'Aucun résultat','tableRows':{'id':'','nom':'','prenom':'','email':'','mdp':'','adresse':'','intro':'':'telephone':'','type':''}}")
+    } else {
       response.send(result);
     };
   });
@@ -24,7 +26,9 @@ router.get('/:id', (request, response) => {
   const id = request.params.id;
   pool.query('SELECT * FROM utilisateurs WHERE id = ?',id, (error, result) => {
     if (error) throw error;
-    if (result.length > 0) {
+    if (!result.length) {
+      response.send("{'error':'Aucun résultat'}")
+    } else {
       response.send(result);
     };
   });

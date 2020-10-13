@@ -12,7 +12,9 @@ const pool = require('../data/config');
 router.get('/', (request, response) => {
   pool.query('SELECT * FROM candidatures', (error, result) => {
     if (error) throw error;
-    if (result.length > 0) {
+    if (!result.length) {
+      response.send("Aucun résultat")
+    } else {
       response.send(result);
     };
   });
@@ -22,7 +24,9 @@ router.get('/:id', (request, response) => {
   const id = request.params.id;
   pool.query('SELECT * FROM candidatures WHERE id = ?',id, (error, result) => {
     if (error) throw error;
-    if (result.length > 0) {
+    if (!result.length) {
+      response.send("Aucun résultat")
+    } else {
       response.send(result);
     };
   });
@@ -32,7 +36,9 @@ router.put('/:id', (request, response) => {
   const id = request.params.id;
   pool.query('UPDATE candidatures SET ? WHERE id =' + id, request.body, (error, result) => {
     if (error) throw error;
-    if (result.length > 0) {
+    if (!result.length) {
+      response.send("Aucun résultat")
+    } else {
       response.send(result);
     };
   });

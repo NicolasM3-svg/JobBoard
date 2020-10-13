@@ -22,7 +22,9 @@ router.get('/:id', (request, response) => {
   const id = request.params.id;
   pool.query('SELECT * FROM entreprises WHERE id = ?',id, (error, result) => {
     if (error) throw error;
-    if (result.length > 0) {
+    if (!result.length) {
+      response.send("Aucun résultat")
+    } else {
       response.send(result);
     };
   });
@@ -32,7 +34,9 @@ router.put('/:id', (request, response) => {
   const id = request.params.id;
   pool.query('UPDATE entreprises SET ? WHERE id =' + id, request.body, (error, result) => {
     if (error) throw error;
-    if (result.length > 0) {
+    if (!result.length) {
+      response.send("Aucun résultat")
+    } else {
       response.send(result);
     };
   });

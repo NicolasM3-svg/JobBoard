@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
         $.post("node/users", inscription, function(data) {
         console.log(data);
       }, "json")
-    }else { alert("Les deux mots de passes ne correspondent pas") }  
+    }else { alert("Les deux mots de passes ne correspondent pas") }
   }else {alert("Le formulaire doit être entièrement rempli pour terminer votre inscription")}
   })
 
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
 
     let dataObjectJson = JSON.stringify(dataObject);
 
-    let api_url = "http://localhost/node/sessions/connect";
+    let api_url = "http://localhost/JobBoard/node/sessions/connect";
     fetch(api_url, {
         method: 'POST',
         body: dataObjectJson,
