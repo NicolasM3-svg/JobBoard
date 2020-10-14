@@ -11,11 +11,18 @@ const pool = require('../data/config');
 
 // READ
 // this api end-point of an API returns JSON data array
+
+var reponse = {};
+var arraytest = [];
+    reponse["error"] = "Aucun résultat";
+    reponse["tableKeys"] = {"id":"id utilisateur","nom":"nom de l'utilisateur","prenom":"prenom de l'utilisateur","email":"email de l'utilisateur","mdp":"mot de passe de l'utilisateur","adresse":"adresse de l'utilisateur","intro":"intro de l'utilisateur","telephone":"numéro de téléphone de l'utilisateur","type":"type de l'utilisateur (0, 1 ou 2)"}
+arraytest[0] = reponse["tableKeys"]
+
 router.get('/', (request, response) => {
   pool.query('SELECT * FROM utilisateurs', (error, result) => {
     if (error) throw error;
     if (!result.length) {
-      response.send("{'error':'Aucun résultat','tableRows':{'id':'','nom':'','prenom':'','email':'','mdp':'','adresse':'','intro':'':'telephone':'','type':''}}")
+      response.send(arraytest)
     } else {
       response.send(result);
     };

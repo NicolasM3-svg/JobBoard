@@ -1,5 +1,26 @@
 document.addEventListener('DOMContentLoaded', (e) => {
 
+  fetch("/node", {
+      method: 'GET',
+      headers:{'content-type': 'application/json'}
+  })
+  .then(response => response.json())
+  .then(json => {
+    console.log(json);
+    if (json.userType == 0 || json.userType == 1 || json.userType == 2) {
+      let userType = json.userType;
+      console.log(userType);
+      if (userType == 0) {
+        $(".navbar-nav").hide();
+      }
+    }
+  })
+
+
+
+
+
+
   $(".modal").on("show.bs.modal", function(){
     if ( !$(this).parent().is("body")) {
       $(this).appendTo("body");
@@ -45,7 +66,18 @@ document.addEventListener('DOMContentLoaded', (e) => {
 
     .then(response => response.json())
     .then(json => {
-      console.log(json);
+      if (json.type == 0) {
+        console.log("Cet utilisateur est un admin");
+          window.location.href="/JobBoard";
+      } else if (json.type == 1) {
+        console.log("Cet utilisateur est un recruteur");
+        window.location.href="/JobBoard";
+      }else if (json.type == 2) {
+        console.log("Cet utilisateur est un candidat");
+          window.location.href="/JobBoard";
+      }else {
+        console.log("il y a un bug dans la matrice");
+      };
     });
   })
 })

@@ -25,6 +25,33 @@ document.addEventListener('DOMContentLoaded', (e) => {
       })
   })
 
+  $(document).off("click", "button[name='add']").on("click", "button[name='add']", function() {
+    let api_url = "http://localhost/JobBoard/node/" + curTable;
+    console.log(api_url);
+    var objForm = {};
+    let addForm = $("input[form=dbAdd]");
+    [].map.call(addForm, function( input ) {
+        objForm[input.name] = input.value;
+    })
+    console.log(objForm);
+    var datatosend = JSON.stringify(objForm);
+    fetch(api_url, {
+        method: 'POST',
+        body: datatosend,
+        headers: {
+          'content-type': 'application/json'
+        }
+      })
+      .then(function() {
+        let i = 0;
+        while (i < 2) {
+          renderTable(curTable)
+          i++
+        }
+        i = 0;
+      })
+  })
+
 
   function renderTable(table) {
     let api_url = "http://localhost/JobBoard/node/" + table;
@@ -37,11 +64,12 @@ document.addEventListener('DOMContentLoaded', (e) => {
         }
       })
       .then(response => response.json())
-      .then(json => {if (json) {
-        console.log(json)
-      } else {
-        console.log("test");
-      };
+      .then(json => {
+        if (json) {
+          console.log(json)
+        } else {
+          console.log("test");
+        };
         createTable(json);
       })
     return curTable;
@@ -67,10 +95,11 @@ document.addEventListener('DOMContentLoaded', (e) => {
     let thead = table.createTHead();
     let row = thead.insertRow();
     form = {};
+    form['isForm'] = true;
     for (let key of data) {
       let th = document.createElement("th");
       let text = document.createTextNode(key);
-      form[key]= key;
+      form[key] = key;
       th.appendChild(text);
       row.appendChild(th);
     }
@@ -82,19 +111,15 @@ document.addEventListener('DOMContentLoaded', (e) => {
     for (let element of data) {
       let id = element["id"]
       let row = thead.insertRow();
+      let verifEl = document.createTextNode(element);
+      console.log(verifEl);
       element["Actions"] = ' ';
-      for (key in element) {
-        let cell = row.insertCell();
-        let text = document.createTextNode(element[key]);
-        if (key == "Actions") {
-          console.log(element.id);
-          if (element.id == "id"){
-            var addEntry = document.createElement("button");
-            var addEntrytxt = document.createTextNode('Ajouter');
-            addEntry.appendChild(addEntrytxt);
-            addEntry.setAttribute("name", "add");
-            cell.appendChild(addEntry);
-          }else{
+      if (!element.hasOwnProperty('isForm')) {
+        for (key in element) {
+          let cell = row.insertCell();
+          let text = document.createTextNode(element[key]);
+          if (key == "Actions") {
+            console.log(element.id);
             var supr = document.createElement("button");
             var mod = document.createElement("button");
             var suprtxt = document.createTextNode('Supprimer');
@@ -102,15 +127,51 @@ document.addEventListener('DOMContentLoaded', (e) => {
             supr.setAttribute("value", id)
             supr.setAttribute("name", "del")
             supr.appendChild(suprtxt);
+            mod.setAttribute("value", id)
+            mod.setAttribute("name", "upd")
             mod.appendChild(modtxt);
             cell.appendChild(supr);
             cell.appendChild(mod);
+          } else {
+            cell.appendChild(text);
+
           }
-
-        } else {
-          cell.appendChild(text);
         }
-
+      } else { delete element.isForm;
+        for (key in element) {
+          let cell = row.insertCell();
+          let text = document.createTextNode(element[key]);
+          if (key == "Actions") {
+            console.log(element.id);
+            let addEntry = document.createElement("button");
+            let addEntrytxt = document.createTextNode('Ajouter');
+            addEntry.appendChild(addEntrytxt);
+            addEntry.setAttribute("name", "add");
+            cell.appendChild(addEntry);
+          } else if (key == 'mdp'){
+            let input = document.createElement("input");
+            input.setAttribute("name", key);
+            input.setAttribute("placeholder", key);
+            input.setAttribute("type", "password");
+            input.setAttribute("form", "dbAdd");
+            cell.appendChild(input);
+          }else if (key == 'email'){
+            let input = document.createElement("input");
+            input.setAttribute("name", key);
+            input.setAttribute("placeholder", key);
+            input.setAttribute("type", "email");
+            input.setAttribute("form", "dbAdd");
+            cell.appendChild(input);
+          }else if (key == 'id'){
+            cell.appendChild(text);
+          }else {
+            let input = document.createElement("input");
+            input.setAttribute("name", key);
+            input.setAttribute("placeholder", key);
+            input.setAttribute("form", "dbAdd");
+            cell.appendChild(input);
+          }
+        }
       }
     }
   }

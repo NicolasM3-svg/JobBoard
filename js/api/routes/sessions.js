@@ -1,6 +1,8 @@
 // import required essentials
 const express = require('express');
 const bcrypt = require('bcrypt');
+var session = require('express-session');
+var FileStore = require('session-file-store')(session);
 // create new router
 const router = express.Router();
 // create a JSON data array
@@ -20,6 +22,8 @@ router.post('/connect', (request, response) => {
                   console.log("an error occured");
                 }
                 if (result) {
+                  request.session.user = sess_val.id;
+                  request.session.type = sess_val.type;
                   response.send(sess_val);
                 } else {
                   response.send('{"erreur": "Les identifiants ne correspondent pas"}');

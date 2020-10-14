@@ -39,6 +39,10 @@
       <table class="table" id="monitoring">
 
       </table>
+      <form name="dbUpdate">
+      </form>
+      <form name="dbAdd">
+      </form>
     </div>
     </main>
 

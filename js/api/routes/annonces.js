@@ -9,11 +9,19 @@ const pool = require('../data/config');
 
 // READ
 // this api end-point of an API returns JSON data array
+
+var reponse = {};
+var arraytest = [];
+    reponse["error"] = "Aucun résultat";
+    reponse["tableKeys"] = {"id": "l'id de l'annonce'","entreprise": "l'id de l'entreprise","type": "Type de contrat","poste": "Nom du poste","description": "contenu de la description","tags": "Tags pour la recherche","p_date": "date d'ajout de l'annonce (format yyyy-mm-dd)"}
+arraytest[0] = reponse["tableKeys"]
+
+
 router.get('/', (request, response) => {
   pool.query('SELECT * FROM annonces', (error, result) => {
     if (error) throw error;
     if (!result.length) {
-      response.send("Aucun résultat")
+      response.send(arraytest)
     } else {
       response.send(result);
     };

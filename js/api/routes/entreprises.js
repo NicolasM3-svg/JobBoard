@@ -9,6 +9,13 @@ const pool = require('../data/config');
 
 // READ
 // this api end-point of an API returns JSON data array
+
+var reponse = {};
+var arraytest = [];
+    reponse["error"] = "Aucun résultat";
+    reponse["tableKeys"] = {"id":"id de l'entreprise","nom":"nom de l'entreprise","localisation":"localisation de l'entreprise","description":"description de l'entreprise","email":"email de l'entreprise"}
+arraytest[0] = reponse["tableKeys"]
+
 router.get('/', (request, response) => {
   pool.query('SELECT * FROM entreprises', (error, result) => {
     if (error) throw error;
