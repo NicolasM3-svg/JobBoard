@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', (e) => {
 
-  fetch("/node", {
+  fetch("node", {
       method: 'GET',
       headers:{'content-type': 'application/json'}
   })
@@ -11,11 +11,32 @@ document.addEventListener('DOMContentLoaded', (e) => {
       let userType = json.userType;
       console.log(userType);
       if (userType == 0) {
-        $(".navbar-nav").hide();
+        $(".navbar-nav button,.navbar-nav a ").hide();
+        let navbar = $(".navbar-nav");
+        var logout = document.createElement("button");
+        var logouttxt = document.createTextNode('Se déconnecter');
+        logout.setAttribute("id", "logout");
+        logout.setAttribute("class", "btn grey-color Subt2");
+        logout.appendChild(logouttxt);
+        $(".navbar-nav").append(logout);
       }
     }
   })
 
+
+  $(document).on("click", "#logout", function() {
+    let api_url = "http://localhost/JobBoard/node/destroy"
+    console.log(api_url);
+    fetch(api_url, {
+        method: 'GET',
+        headers: {
+          'content-type': 'application/json'
+        }
+      })
+      .then(function() {
+        window.location.href="/JobBoard";
+      })
+  })
 
 
 

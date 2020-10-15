@@ -43,11 +43,14 @@ app.get('/', (req, res) => {
     if (req.session.user) {
       test["reponse"] = "The user with id: "+req.session.user+" is connected !";
       test["userType"] = req.session.type;
+      delete(test["error"]);
       res.send(test);
     }
     else {
-        req.session.views = 1
-        res.send('New client')
+        test["error"] = "L'utilisateur actuel est un visiteur"
+        delete(test["reponse"]);
+        delete(test["userType"]);
+        res.send(test)
     }
 })
 
