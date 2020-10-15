@@ -1,12 +1,7 @@
-
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
-
-
 
 <!-- PROJECT LOGO -->
 <br />
@@ -18,11 +13,11 @@
   <h3 align="center">JobBoar'd - Epitech</h3>
 
   <p align="center">
-    An awesome README template to jumpstart your projects!
+    Le site pour vos recherches d'annonces (c'est pas vrai..) :smile:
     <br />
-    <a href="https://github.com/NicolasM3-svg/JobBoard/issues">Un problème avec le code ?</a>
+    <a href="https://github.com/NicolasM3-svg/JobBoard/issues">Un problème avec le code</a>
     ·
-    <a href="https://github.com/NicolasM3-svg/JobBoard/issues">Une option a ajouter ?</a>
+    <a href="https://github.com/NicolasM3-svg/JobBoard/issues">Une option a ajouter</a>
   </p>
 </p>
 
@@ -35,14 +30,10 @@ Contenance du site :
 * Création et modification d'annonces pour les entreprises,
 * Création d'un compte candidat pour postuler aux offres,
 * Panel qui permet la gestion des utilisateurs,
-* Création d'un API à l'aide de NodeJS ! :smile:
-
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue.
-
-A list of commonly used resources that I find helpful are listed in the acknowledgements.
+* Création d'un API à l'aide de NodeJS !
 
 ### Développer avec 
-Voici la liste de tous les frameworks utilisés pour le site.
+Liste de tous les frameworks utilisés pour la création du site JobBoar'd :
 * [Bootstrap](https://getbootstrap.com)
 * [JQuery](https://jquery.com)
 * [Node.JS](https://nodejs.org/en/)
@@ -67,7 +58,7 @@ npm install session-file-store
 ```sh
 git clone https://github.com/NicolasM3-svg/JobBoard.git
 ```
-2. Installer les NPM nécessaire (Linux/Windows)
+2. Installer les NPM nécessaires (Linux/Windows)
 ```sh
 npm install (liste au dessus)
 ```
@@ -91,6 +82,7 @@ module.exports = pool;
 ## Contacts
 
 Nicolas BAAR - [@MeesN](https://twitter.com/MeesN_) - nicolas.baar@epitech.eu
+<br />
 Havane palabaud - havane.palabaud@epitech.eu
 
 Lien du projet : [https://github.com/NicolasM3-svg/JobBoard](https://github.com/NicolasM3-svg/JobBoard)
