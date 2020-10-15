@@ -1,3 +1,4 @@
+<p align="center">
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
@@ -5,7 +6,6 @@
 
 <!-- PROJECT LOGO -->
 <br />
-<p align="center">
   <a href="https://github.com/NicolasM3-svg/JobBoard">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
