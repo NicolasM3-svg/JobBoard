@@ -13,7 +13,7 @@
   <h3 align="center">JobBoar'd - Epitech</h3>
 
   <p align="center">
-    Le site pour vos recherches d'annonces (c'est pas vrai..) :smile:
+    Le site pour vos recherches d'emplois (c'est pas vrai..) :smile:
     <br />
     <a href="https://github.com/NicolasM3-svg/JobBoard/issues">Un problème avec le code</a>
     ·
