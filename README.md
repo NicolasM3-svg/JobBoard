@@ -85,11 +85,11 @@ Havane palabaud - havane.palabaud@epitech.eu
 
 Lien du projet : [https://github.com/NicolasM3-svg/JobBoard](https://github.com/NicolasM3-svg/JobBoard)
 
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=flat-square
+[contributors-shield]: https://img.shields.io/github/contributors/NicolasM3-svg/JobBoard.svg?style=flat-square
 [contributors-url]: https://github.com/NicolasM3-svg/JobBoard/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=flat-square
+[forks-shield]: https://img.shields.io/github/forks/NicolasM3-svg/JobBoard.svg?style=flat-square
 [forks-url]: https://github.com/NicolasM3-svg/JobBoard/pulse
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=flat-square
+[stars-shield]: https://img.shields.io/github/stars/NicolasM3-svg/JobBoard.svg?style=flat-square
 [stars-url]: https://github.com/NicolasM3-svg/JobBoard/stargazers
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=flat-square
+[issues-shield]: https://img.shields.io/github/issues/NicolasM3-svg/JobBoard.svg?style=flat-square
 [issues-url]: https://github.com/NicolasM3-svg/JobBoard/issues
