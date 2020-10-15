@@ -7,7 +7,7 @@
 
 <p align="center">
   <a href="https://github.com/NicolasM3-svg/JobBoard">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="images/logo2.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">JobBoar'd - Epitech</h3>
