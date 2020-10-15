@@ -9,10 +9,19 @@ const pool = require('../data/config');
 
 // READ
 // this api end-point of an API returns JSON data array
+var reponse = {};
+var arraytest = [];
+    reponse["error"] = "Aucun résultat";
+    reponse["tableKeys"] = {"id": "l'id de la candidature","utilisateur": "l'id utilisateur","annonce": "id de l'annonce","email": "contenu du mail"}
+arraytest[0] = reponse["tableKeys"]
+
+
 router.get('/', (request, response) => {
   pool.query('SELECT * FROM candidatures', (error, result) => {
     if (error) throw error;
-    if (result.length > 0) {
+    if (!result.length) {
+      response.send(arraytest)
+    } else {
       response.send(result);
     };
   });
@@ -22,7 +31,9 @@ router.get('/:id', (request, response) => {
   const id = request.params.id;
   pool.query('SELECT * FROM candidatures WHERE id = ?',id, (error, result) => {
     if (error) throw error;
-    if (result.length > 0) {
+    if (!result.length) {
+      response.send(reponse["tableKeys"])
+    } else {
       response.send(result);
     };
   });
@@ -32,9 +43,19 @@ router.put('/:id', (request, response) => {
   const id = request.params.id;
   pool.query('UPDATE candidatures SET ? WHERE id =' + id, request.body, (error, result) => {
     if (error) throw error;
-    if (result.length > 0) {
+    if (!result.length) {
+      response.send("Aucun résultat")
+    } else {
       response.send(result);
     };
+  });
+});
+
+router.delete('/:id', (request, response) => {
+  const id = request.params.id;
+  pool.query('DELETE FROM candidatures WHERE id =' + id, (error, result) => {
+    if (error) throw error;
+      response.send(result);
   });
 });
 

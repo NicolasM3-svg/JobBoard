@@ -142,12 +142,12 @@
 
             <form class="container">
               <div class="form-group margin1">
-              <label for="examInputEmail1"><i class="far fa-user"></i>   Adresse e-mail</label>
-                <input type="email" class="form-control marg1" id="examInputEmail1" placeholder="Adresse e-mail">
+              <label for="inputemail1"><i class="far fa-user"></i>   Adresse e-mail</label>
+                <input type="email" class="form-control marg1" id="email3" name="inputemail1" placeholder="Adresse e-mail">
               </div>
               <div class="form-group">
-                <label for="examInputPassword2"><i class="fas fa-sign-out-alt"></i>    Mot de passe</label>
-                <input type="password" class="form-control marg1" id="examInputPassword2" placeholder="Mot de passe">
+                <label for="inputmdp1"><i class="fas fa-sign-out-alt"></i>    Mot de passe</label>
+                <input type="password" class="form-control marg1" id="password3" name="inputmdp1" placeholder="Mot de passe">
               </div>
               <div class="alert alert-danger test2 small" role="alert">
                 Ne partager pas votre mot de passe !
@@ -157,7 +157,7 @@
                 <label class="form-check-label" for="exampleCheck1">Se souvenir de moi</label>
               </div>
               <div class="modal-footer">
-              <button type="submit" class="btn btn-primary greycolor">Se connecter</button>
+              <button type="button" id="connectid" class="btn btn-primary greycolor">Se connecter</button>
               </div>
             </form>
           </div>

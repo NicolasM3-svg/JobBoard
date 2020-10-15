@@ -85,20 +85,20 @@
 
 .card-header {
     border-radius: 1rem 1rem 0px 0px !important;
-    background-image: url('http://localhost/img/geometry.png') !important;
+    background-image: url('http://localhost/JobBoard/img/geometry.png') !important;
     background-repeat: repeat;
     border-bottom: none !important;
 }
 
 .card-footer {
     border-radius: 0px 0px 1rem 1rem !important;
-    background-image: url('http://localhost/img/geometry.png') !important;
+    background-image: url('http://localhost/JobBoard/img/geometry.png') !important;
     background-repeat: repeat;
     border-top: none !important;
 }
 
 .card-body {
-    background-image: url('http://localhost/img/geometry.png') !important;
+    background-image: url('http://localhost/JobBoard/img/geometry.png') !important;
     background-repeat: repeat;
 }
 
