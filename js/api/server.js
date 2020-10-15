@@ -23,6 +23,11 @@ app.use(
 
 app.use(express.json());
 
+var fileStoreOptions = {
+  path: "./sessions",
+  reapInterval: 10,
+};
+
 app.use(session({ secret: 'keyboard cat',
     resave: false,
     saveUninitialized: false,

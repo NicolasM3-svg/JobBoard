@@ -13,6 +13,12 @@ document.addEventListener('DOMContentLoaded', (e) => {
       if (userType == 0) {
         $(".navbar-nav button,.navbar-nav a ").hide();
         let navbar = $(".navbar-nav");
+        var panel = document.createElement("button");
+        var paneltxt = document.createTextNode('Panel admin');
+        panel.setAttribute("id", "panel");
+        panel.setAttribute("class", "btn grey-color Subt2");
+        panel.appendChild(paneltxt);
+        $(".navbar-nav").append(panel);
         var logout = document.createElement("button");
         var logouttxt = document.createTextNode('Se déconnecter');
         logout.setAttribute("id", "logout");
