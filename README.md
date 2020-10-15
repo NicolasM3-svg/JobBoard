@@ -7,7 +7,7 @@
 
 <p align="center">
   <a href="https://github.com/NicolasM3-svg/JobBoard">
-    <img src="images/logo2.png" alt="Logo" width="80" height="80">
+    <img src="img/logo2.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">JobBoar'd - Epitech</h3>
@@ -93,4 +93,3 @@ Lien du projet : [https://github.com/NicolasM3-svg/JobBoard](https://github.com/
 [stars-url]: https://github.com/NicolasM3-svg/JobBoard/stargazers
 [issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=flat-square
 [issues-url]: https://github.com/NicolasM3-svg/JobBoard/issues
-[product-screenshot]: images/screenshot.png
