@@ -29,8 +29,6 @@
 <!-- ABOUT THE PROJECT -->
 ## À propos
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
 Le site JobBoar'd est un projet créer par Nicolas et Havane pour compléter le module sur le développement web.
 
 Contenance du site :
@@ -96,3 +94,15 @@ Nicolas BAAR - [@MeesN](https://twitter.com/MeesN_) - nicolas.baar@epitech.eu
 Havane palabaud - havane.palabaud@epitech.eu
 
 Lien du projet : [https://github.com/NicolasM3-svg/JobBoard](https://github.com/NicolasM3-svg/JobBoard)
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=flat-square
+[contributors-url]: https://github.com/NicolasM3-svg/JobBoard/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=flat-square
+[forks-url]: https://github.com/NicolasM3-svg/JobBoard/pulse
+[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=flat-square
+[stars-url]: https://github.com/NicolasM3-svg/JobBoard/stargazers
+[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=flat-square
+[issues-url]: https://github.com/NicolasM3-svg/JobBoard/issues
+[product-screenshot]: images/screenshot.png
