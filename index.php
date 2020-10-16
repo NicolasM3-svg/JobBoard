@@ -10,6 +10,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/1158c6470c.js" crossorigin="anonymous"></script>
     <script src="./js/script.js"></script>
     <link rel="icon" href="img/favicon.ico">
   </head>
@@ -32,7 +33,7 @@
 
               <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                   <form class="form-inline">
-                      <div class="input-group">                    
+                      <div class="input-group">
                           <input type="text" class="form-control" placeholder="Rechercher une offre">
                           <div class="input-group-append">
                               <button type="button" class="btn btn-secondary"><i class="fa fa-search"></i></button>
@@ -100,7 +101,7 @@
                       Ne partager pas votre mot de passe !
                   </div>
                 </div>
-                
+
                 <div>
                   <select name="type" class="custom-select nicomarg">
                     <option selected>Vous êtes ...</option>
@@ -162,7 +163,7 @@
             </form>
           </div>
         </div>
-      </div>  
+      </div>
 
       <!--
         Popup pour postuler à une offre en se connectant ou non
@@ -287,7 +288,7 @@
             </div>
           </div>
         </div>
-      </div>  
+      </div>
 
       <!--
         Annonces recrutements ...etc
