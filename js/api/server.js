@@ -59,6 +59,7 @@ app.get('/', (req, res) => {
     }
 })
 
+
 app.get('/destroy', (req, res) => {
     req.session.destroy()
     res.send('Session destroyed')

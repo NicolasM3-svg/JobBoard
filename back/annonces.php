@@ -1,8 +1,12 @@
 <?php
 include "bdd.php";
+
+
+$raw_data = file_get_contents('http://localhost/JobBoard/node/annonces');
+$data = json_decode($raw_data, true);
+print_r($data[0]['id']);
 $nb = 0;
-$req = $bdd->query("SELECT id, entreprise, type, poste, description, tags, p_date FROM annonces");
-       while($row = $req->fetch()) {
+       foreach ($data as $row) {
           $id = $row["id"];
           $entreprise = $row["entreprise"];
           $type = $row["type"];
@@ -10,9 +14,9 @@ $req = $bdd->query("SELECT id, entreprise, type, poste, description, tags, p_dat
           $description = $row["description"];
           $tags = $row["tags"];
           $date = $row["p_date"];
-
-          $req2 = $bdd->query("SELECT nom, description FROM entreprises WHERE id = $entreprise");
-          while($row = $req2->fetch()) {
+          $raw_data = file_get_contents('http://localhost/JobBoard/node/entreprises');
+          $data2 = json_decode($raw_data, true);
+          foreach ($data2 as $row){
              $entreprise = $row["nom"];
              $desc_entreprise = $row["description"];
            };

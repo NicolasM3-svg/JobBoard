@@ -16,13 +16,13 @@ document.addEventListener('DOMContentLoaded', (e) => {
         var panel = document.createElement("button");
         var paneltxt = document.createTextNode('Panel admin');
         panel.setAttribute("id", "panel");
-        panel.setAttribute("class", "btn grey-color Subt2");
+        panel.setAttribute("class", "btn Subt2");
         panel.appendChild(paneltxt);
         $(".navbar-nav").append(panel);
         var logout = document.createElement("button");
         var logouttxt = document.createTextNode('Se déconnecter');
         logout.setAttribute("id", "logout");
-        logout.setAttribute("class", "btn grey-color Subt2");
+        logout.setAttribute("class", "btn greycolor Subt2");
         logout.appendChild(logouttxt);
         $(".navbar-nav").append(logout);
       }
@@ -41,6 +41,10 @@ document.addEventListener('DOMContentLoaded', (e) => {
       .then(function() {
         window.location.href="/JobBoard";
       })
+  })
+
+  $(document).on("click", "#panel", function() {
+        window.location.href="node/sessions/admin";
   })
 
   $(".modal").on("show.bs.modal", function(){

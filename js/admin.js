@@ -2,6 +2,20 @@ document.addEventListener('DOMContentLoaded', (e) => {
   var curTable = renderTable("users");
   var form = {};
 
+  $(document).on("click", "#logout", function() {
+    let api_url = "http://localhost/JobBoard/node/destroy"
+    console.log(api_url);
+    fetch(api_url, {
+        method: 'GET',
+        headers: {
+          'content-type': 'application/json'
+        }
+      })
+      .then(function() {
+        window.location.href = "/JobBoard";
+      })
+  })
+
   $("#monitorSel button").click(function() {
     renderTable(this.value);
   });
@@ -30,8 +44,8 @@ document.addEventListener('DOMContentLoaded', (e) => {
     console.log(api_url);
     var objForm = {};
     let addForm = $("input[form=dbAdd]");
-    [].map.call(addForm, function( input ) {
-        objForm[input.name] = input.value;
+    [].map.call(addForm, function(input) {
+      objForm[input.name] = input.value;
     })
     console.log(objForm);
     var datatosend = JSON.stringify(objForm);
@@ -139,7 +153,8 @@ document.addEventListener('DOMContentLoaded', (e) => {
 
           }
         }
-      } else { delete element.isForm;
+      } else {
+        delete element.isForm;
         for (key in element) {
           let cell = row.insertCell();
           let text = document.createTextNode(element[key]);
@@ -151,7 +166,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
             addEntry.setAttribute("name", "add");
             addEntry.setAttribute("class", "btn btn-primary");
             cell.appendChild(addEntry);
-          } else if (key == 'mdp'){
+          } else if (key == 'mdp') {
             let input = document.createElement("input");
             input.setAttribute("name", key);
             input.setAttribute("placeholder", key);
@@ -159,7 +174,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
             input.setAttribute("form", "dbAdd");
             input.setAttribute("class", "inputadmin input-group-text");
             cell.appendChild(input);
-          }else if (key == 'email'){
+          } else if (key == 'email') {
             let input = document.createElement("input");
             input.setAttribute("name", key);
             input.setAttribute("placeholder", key);
@@ -167,9 +182,9 @@ document.addEventListener('DOMContentLoaded', (e) => {
             input.setAttribute("form", "dbAdd");
             input.setAttribute("class", "inputadmin input-group-text");
             cell.appendChild(input);
-          }else if (key == 'id'){
+          } else if (key == 'id') {
             cell.appendChild(text);
-          }else {
+          } else {
             let input = document.createElement("input");
             input.setAttribute("name", key);
             input.setAttribute("placeholder", key);
