@@ -152,6 +152,10 @@ table {
     width: 95% !important;
 }
 
+.table thead th {
+    border-bottom: none !important;
+}
+
 .inputadmin {
     width: 90% !important;
 }
