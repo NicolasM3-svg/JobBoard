@@ -14,7 +14,7 @@ $nb = 0;
           $description = $row["description"];
           $tags = $row["tags"];
           $date = $row["p_date"];
-          $raw_data = file_get_contents('http://localhost/JobBoard/node/entreprises');
+          $raw_data = file_get_contents('http://localhost/JobBoard/node/entreprises/'.$entreprise);
           $data2 = json_decode($raw_data, true);
           foreach ($data2 as $row){
              $entreprise = $row["nom"];
