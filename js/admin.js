@@ -126,11 +126,11 @@ document.addEventListener('DOMContentLoaded', (e) => {
             var modtxt = document.createTextNode('Modifier');
             supr.setAttribute("value", id)
             supr.setAttribute("name", "del")
-            supr.setAttribute("class", "d-flex flex-column btn btn-danger")
+            supr.setAttribute("class", "mx-auto d-block btn btn-danger")
             supr.appendChild(suprtxt);
             mod.setAttribute("value", id)
             mod.setAttribute("name", "upd")
-            mod.setAttribute("class", "d-flex flex-column btn btn-success")
+            mod.setAttribute("class", "mx-auto d-block btn btn-success")
             mod.appendChild(modtxt);
             cell.appendChild(supr);
             cell.appendChild(mod);
@@ -181,6 +181,4 @@ document.addEventListener('DOMContentLoaded', (e) => {
       }
     }
   }
-
-
 })
