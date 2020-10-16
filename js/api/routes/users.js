@@ -43,11 +43,27 @@ router.get('/:id', (request, response) => {
 
 router.put('/:id', (request, response) => {
   const id = request.params.id;
+  if (request.body.mdp){
+    var user_infos = request.body;
+    const saltRounds = 10;
+    bcrypt.genSalt(saltRounds, function(err, salt) {
+      bcrypt.hash(request.body.mdp, salt, function(err, hash) {
+          user_infos.mdp = hash;
+          console.log(user_infos);
+          pool.query('UPDATE utilisateurs SET ? WHERE id =' + id, user_infos, (error, result) => {
+              if (error) throw error;
+              response.status(201).send("{'success': `Utilisateur avec l'ID: " + result.insertId + " mis à jour`}");
+          });
+      });
+  });
+} else {
   pool.query('UPDATE utilisateurs SET ? WHERE id =' + id, request.body, (error, result) => {
     if (error) throw error;
       console.log(request.body.email);
       response.send(result);
   });
+}
+
 });
 
 router.delete('/:id', (request, response) => {

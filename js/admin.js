@@ -28,11 +28,14 @@ document.addEventListener('DOMContentLoaded', (e) => {
   $(document).off("click", "tbody td").on("click", "tbody td", function() {
     let cell = $(this);
     if (! cell.find('input').length) {
-      if (! cell.find('button').length) {
+      if (! cell.find('button').length > 0) {
         let addInput = document.createElement("input");
         let inputVal = cell[0].innerText;
+        let inputName = cell[0].attributes.name.nodeValue;
+        console.log(cell);
         addInput.setAttribute("class", "inputadmin input-group-text");
         addInput.setAttribute("value", inputVal);
+        addInput.setAttribute("name", inputName);
         cell[0].innerHTML = "";
         cell.append(addInput);
       }
@@ -60,19 +63,22 @@ document.addEventListener('DOMContentLoaded', (e) => {
   })
 
   $(document).off("click", "button[name='upd']").on("click", "button[name='upd']", function() {
-    let api_url = "http://localhost/JobBoard/node/" + curTable;
+    let rowId = $(this).val();
+    let api_url = "http://localhost/JobBoard/node/"+ curTable +"/"+ rowId;
     console.log(api_url);
-    let rowId = $(this).value;
     console.log(rowId);
     var objForm = {};
-    let addForm = $("tr[value="+rowId+"]");
+    let addForm = $("tr[value="+rowId+"] input");
     [].map.call(addForm, function(input) {
+      if (input.name == 'mdp') {
+
+      }
       objForm[input.name] = input.value;
     })
     console.log(objForm);
     var datatosend = JSON.stringify(objForm);
     fetch(api_url, {
-        method: 'POST',
+        method: 'PUT',
         body: datatosend,
         headers: {
           'content-type': 'application/json'
