@@ -27,18 +27,18 @@
       </div>
     </header>
 
-    <main class="container">
-      <div class="row" id="monitorSel">
-        <button type="button" class="button" value="annonces" name="button">Annonces</button>
-        <button type="button" class="button" value="users" name="button">Utilisateurs</button>
-        <button type="button" class="button" value="candidatures" name="button">Candidatures</button>
-        <button type="button" class="button" value="entreprises" name="button">Entreprises</button>
+    <main>
+      <div id="monitorSel" class="d-flex justify-content-center">
+        <button type="button" class="btn greycolor Subt2 marg2" value="annonces" name="button">Annonces</button>
+        <button type="button" class="btn greycolor Subt2 marg2" value="users" name="button">Utilisateurs</button>
+        <button type="button" class="btn greycolor Subt2 marg2" value="candidatures" name="button">Candidatures</button>
+        <button type="button" class="btn greycolor Subt2 marg2" value="entreprises" name="button">Entreprises</button>
       </div>
 
-      <div class="row">
-      <table class="table" id="monitoring">
+      <div class="table-responsive-xl text-center">
+        <table class="table" id="monitoring">
 
-      </table>
+        </table>
       <form name="dbUpdate">
       </form>
       <form name="dbAdd">

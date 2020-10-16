@@ -135,3 +135,27 @@ footer {
 .nav-tabs {
     margin: 2% 2% 0% 2% !important;
 }
+
+td {
+    max-width: 100px !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+}
+
+.marg2 {
+    margin: 0% 0.5% 2% 0.5%;
+}
+
+table {
+    margin: 2%;
+    width: 95% !important;
+}
+
+.inputadmin {
+    width: 90% !important;
+}
+
+.btn-success {
+    margin-bottom: 1%;
+}

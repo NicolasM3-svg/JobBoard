@@ -126,9 +126,11 @@ document.addEventListener('DOMContentLoaded', (e) => {
             var modtxt = document.createTextNode('Modifier');
             supr.setAttribute("value", id)
             supr.setAttribute("name", "del")
+            supr.setAttribute("class", "d-flex flex-column btn btn-success")
             supr.appendChild(suprtxt);
             mod.setAttribute("value", id)
             mod.setAttribute("name", "upd")
+            mod.setAttribute("class", "d-flex flex-column btn btn-success")
             mod.appendChild(modtxt);
             cell.appendChild(supr);
             cell.appendChild(mod);
@@ -147,6 +149,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
             let addEntrytxt = document.createTextNode('Ajouter');
             addEntry.appendChild(addEntrytxt);
             addEntry.setAttribute("name", "add");
+            addEntry.setAttribute("class", "btn btn-primary");
             cell.appendChild(addEntry);
           } else if (key == 'mdp'){
             let input = document.createElement("input");
@@ -154,6 +157,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
             input.setAttribute("placeholder", key);
             input.setAttribute("type", "password");
             input.setAttribute("form", "dbAdd");
+            input.setAttribute("class", "inputadmin input-group-text");
             cell.appendChild(input);
           }else if (key == 'email'){
             let input = document.createElement("input");
@@ -161,6 +165,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
             input.setAttribute("placeholder", key);
             input.setAttribute("type", "email");
             input.setAttribute("form", "dbAdd");
+            input.setAttribute("class", "inputadmin input-group-text");
             cell.appendChild(input);
           }else if (key == 'id'){
             cell.appendChild(text);
@@ -169,6 +174,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
             input.setAttribute("name", key);
             input.setAttribute("placeholder", key);
             input.setAttribute("form", "dbAdd");
+            input.setAttribute("class", "inputadmin input-group-text");
             cell.appendChild(input);
           }
         }
