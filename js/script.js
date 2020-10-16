@@ -29,7 +29,6 @@ document.addEventListener('DOMContentLoaded', (e) => {
     }
   })
 
-
   $(document).on("click", "#logout", function() {
     let api_url = "http://localhost/JobBoard/node/destroy"
     console.log(api_url);
@@ -44,10 +43,6 @@ document.addEventListener('DOMContentLoaded', (e) => {
       })
   })
 
-
-
-
-
   $(".modal").on("show.bs.modal", function(){
     if ( !$(this).parent().is("body")) {
       $(this).appendTo("body");
@@ -58,7 +53,6 @@ document.addEventListener('DOMContentLoaded', (e) => {
   .on("hide.bs.modal", function() {
     $("body").children().not(this).removeClass("blur");
   })
-
 
   $("#submit").click(function() {
     var inscription_form = document.forms.inscription;

@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
             var modtxt = document.createTextNode('Modifier');
             supr.setAttribute("value", id)
             supr.setAttribute("name", "del")
-            supr.setAttribute("class", "d-flex flex-column btn btn-success")
+            supr.setAttribute("class", "d-flex flex-column btn btn-danger")
             supr.appendChild(suprtxt);
             mod.setAttribute("value", id)
             mod.setAttribute("name", "upd")

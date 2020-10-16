@@ -156,6 +156,6 @@ table {
     width: 90% !important;
 }
 
-.btn-success {
+.btn-success, .btn-danger {
     margin-bottom: 1%;
 }
