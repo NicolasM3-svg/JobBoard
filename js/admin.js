@@ -20,11 +20,60 @@ document.addEventListener('DOMContentLoaded', (e) => {
     renderTable(this.value);
   });
 
+  $(document).off("mouseover mouseleave", "tbody tr[value!='id']").on("mouseenter mouseleave", "tbody tr[value!='id']", function() {
+    $(this).toggleClass( "row-active" );
+
+  })
+
+  $(document).off("click", "tbody td").on("click", "tbody td", function() {
+    let cell = $(this);
+    if (! cell.find('input').length) {
+      if (! cell.find('button').length) {
+        let addInput = document.createElement("input");
+        let inputVal = cell[0].innerText;
+        addInput.setAttribute("class", "inputadmin input-group-text");
+        addInput.setAttribute("value", inputVal);
+        cell[0].innerHTML = "";
+        cell.append(addInput);
+      }
+    }
+
+  })
+
   $(document).off("click", "button[name='del']").on("click", "button[name='del']", function() {
     let api_url = "http://localhost/JobBoard/node/" + curTable + "/" + this.value;
     console.log(api_url);
     fetch(api_url, {
         method: 'DELETE',
+        headers: {
+          'content-type': 'application/json'
+        }
+      })
+      .then(function() {
+        let i = 0;
+        while (i < 2) {
+          renderTable(curTable)
+          i++
+        }
+        i = 0;
+      })
+  })
+
+  $(document).off("click", "button[name='upd']").on("click", "button[name='upd']", function() {
+    let api_url = "http://localhost/JobBoard/node/" + curTable;
+    console.log(api_url);
+    let rowId = $(this).value;
+    console.log(rowId);
+    var objForm = {};
+    let addForm = $("tr[value="+rowId+"]");
+    [].map.call(addForm, function(input) {
+      objForm[input.name] = input.value;
+    })
+    console.log(objForm);
+    var datatosend = JSON.stringify(objForm);
+    fetch(api_url, {
+        method: 'POST',
+        body: datatosend,
         headers: {
           'content-type': 'application/json'
         }
@@ -108,6 +157,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
   function generateTableHead(table, data) {
     let thead = table.createTHead();
     let row = thead.insertRow();
+    thead.setAttribute("class", 'thead-admin text-white')
     form = {};
     form['isForm'] = true;
     for (let key of data) {
@@ -125,6 +175,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
     for (let element of data) {
       let id = element["id"]
       let row = thead.insertRow();
+      row.setAttribute("value", id)
       let verifEl = document.createTextNode(element);
       console.log(verifEl);
       element["Actions"] = ' ';
@@ -132,7 +183,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
         for (key in element) {
           let cell = row.insertCell();
           let text = document.createTextNode(element[key]);
-          if (key == "Actions") {
+          if (key == "Actions" && Number.isInteger(id)) {
             console.log(element.id);
             var supr = document.createElement("button");
             var mod = document.createElement("button");
@@ -148,7 +199,13 @@ document.addEventListener('DOMContentLoaded', (e) => {
             mod.appendChild(modtxt);
             cell.appendChild(supr);
             cell.appendChild(mod);
-          } else {
+          } else if (element[key] == ""){
+            let text = document.createTextNode("null");
+            cell.setAttribute("name", key);
+            cell.appendChild(text);
+
+          }else {
+            cell.setAttribute("name", key);
             cell.appendChild(text);
 
           }
