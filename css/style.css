@@ -171,3 +171,14 @@ table {
 .btn-success, .btn-danger {
     margin-bottom: 1%;
 }
+
+main{
+  flex: 1 0 auto;
+}
+
+body{
+display: flex;
+height: 100%;
+flex-direction: column;
+min-height: 100vh;
+}
