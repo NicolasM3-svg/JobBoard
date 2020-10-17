@@ -4,7 +4,6 @@ include "bdd.php";
 
 $raw_data = file_get_contents('http://localhost/JobBoard/node/annonces');
 $data = json_decode($raw_data, true);
-print_r($data[0]['id']);
 $nb = 0;
        foreach ($data as $row) {
           $id = $row["id"];
